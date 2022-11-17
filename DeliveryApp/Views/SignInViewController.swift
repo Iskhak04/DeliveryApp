@@ -7,8 +7,14 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class SignInViewController: UIViewController {
+    
+    let bag = DisposeBag()
+    
+    private let viewModel = SignInViewModel()
     
     private lazy var mainImageView: UIImageView = {
         let view = UIImageView()
@@ -115,12 +121,34 @@ class SignInViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        emailTextField.text = ""
+        passwordTextField.text = ""
+    }
+    
     @objc func forgotPasswordButtonClicked() {
         
     }
     
     @objc func signInButtonClicked() {
+        guard let email = emailTextField.text, let password = passwordTextField.text, !email.isEmpty, !password.isEmpty else { return }
         
+        viewModel.signInStatusVM.subscribe(onNext: {
+            if $0 == true {
+                let alert = UIAlertController(title: "Success", message: "You've successfully signed in", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .cancel)
+                alert.addAction(okAction)
+                self.present(alert, animated: true)
+            } else {
+                let alert = UIAlertController(title: "Error", message: "Error", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .cancel)
+                alert.addAction(okAction)
+                self.present(alert, animated: true)
+            }
+        }).disposed(by: bag)
+        
+        viewModel.userDataVM.onNext((email, password))
     }
     
     @objc func signUpButtonClicked() {
