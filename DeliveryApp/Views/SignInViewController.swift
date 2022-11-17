@@ -128,7 +128,8 @@ class SignInViewController: UIViewController {
     }
     
     @objc func forgotPasswordButtonClicked() {
-        
+        let forgotPasswordVC = ForgotPasswordViewController()
+        navigationController?.pushViewController(forgotPasswordVC, animated: true)
     }
     
     @objc func signInButtonClicked() {

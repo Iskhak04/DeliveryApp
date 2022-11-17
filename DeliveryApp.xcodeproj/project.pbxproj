@@ -10,6 +10,9 @@
 		322D989A292514F500C94FC9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322D9899292514F400C94FC9 /* SignUpViewController.swift */; };
 		3252D97329263A8D00D884E7 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3252D97229263A8D00D884E7 /* SignInViewModel.swift */; };
 		3252D97529263AAB00D884E7 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3252D97429263AAB00D884E7 /* SignInModel.swift */; };
+		3252D97729263DA400D884E7 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3252D97629263DA400D884E7 /* ForgotPasswordViewController.swift */; };
+		3252D97929263EA200D884E7 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3252D97829263EA200D884E7 /* ForgotPasswordViewModel.swift */; };
+		3252D97B29263EC500D884E7 /* ForgotPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3252D97A29263EC500D884E7 /* ForgotPasswordModel.swift */; };
 		3271B92B292637E200166FB3 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3271B92A292637E200166FB3 /* UserData.swift */; };
 		3296B4002923CAC5009DAD2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296B3FF2923CAC5009DAD2B /* AppDelegate.swift */; };
 		3296B4022923CAC5009DAD2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296B4012923CAC5009DAD2B /* SceneDelegate.swift */; };
@@ -27,6 +30,9 @@
 		322D9899292514F400C94FC9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3252D97229263A8D00D884E7 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		3252D97429263AAB00D884E7 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		3252D97629263DA400D884E7 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		3252D97829263EA200D884E7 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		3252D97A29263EC500D884E7 /* ForgotPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordModel.swift; sourceTree = "<group>"; };
 		3271B92A292637E200166FB3 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		3296B3FC2923CAC5009DAD2B /* DeliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3296B3FF2923CAC5009DAD2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 			children = (
 				32E6CE732925DFF200440ED1 /* SignUpViewModel.swift */,
 				3252D97229263A8D00D884E7 /* SignInViewModel.swift */,
+				3252D97829263EA200D884E7 /* ForgotPasswordViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -81,6 +88,7 @@
 				3296B4032923CAC5009DAD2B /* ViewController.swift */,
 				3296B4132923CF28009DAD2B /* SignInViewController.swift */,
 				322D9899292514F400C94FC9 /* SignUpViewController.swift */,
+				3252D97629263DA400D884E7 /* ForgotPasswordViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -91,6 +99,7 @@
 				32E6CE752925E09900440ED1 /* SignUpModel.swift */,
 				3271B92A292637E200166FB3 /* UserData.swift */,
 				3252D97429263AAB00D884E7 /* SignInModel.swift */,
+				3252D97A29263EC500D884E7 /* ForgotPasswordModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,8 +276,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3252D97929263EA200D884E7 /* ForgotPasswordViewModel.swift in Sources */,
 				3296B4042923CAC5009DAD2B /* ViewController.swift in Sources */,
 				32E6CE762925E09900440ED1 /* SignUpModel.swift in Sources */,
+				3252D97729263DA400D884E7 /* ForgotPasswordViewController.swift in Sources */,
 				3296B4002923CAC5009DAD2B /* AppDelegate.swift in Sources */,
 				3296B4142923CF28009DAD2B /* SignInViewController.swift in Sources */,
 				3296B4022923CAC5009DAD2B /* SceneDelegate.swift in Sources */,
@@ -276,6 +287,7 @@
 				3271B92B292637E200166FB3 /* UserData.swift in Sources */,
 				32E6CE742925DFF200440ED1 /* SignUpViewModel.swift in Sources */,
 				322D989A292514F500C94FC9 /* SignUpViewController.swift in Sources */,
+				3252D97B29263EC500D884E7 /* ForgotPasswordModel.swift in Sources */,
 				3252D97529263AAB00D884E7 /* SignInModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
