@@ -124,7 +124,8 @@ class SignInViewController: UIViewController {
     }
     
     @objc func signUpButtonClicked() {
-        
+        let signUpVC = SignUpViewController()
+        navigationController?.pushViewController(signUpVC, animated: true)
     }
     
     private func layout() {

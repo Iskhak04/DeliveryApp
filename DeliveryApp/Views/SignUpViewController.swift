@@ -7,8 +7,14 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class SignUpViewController: UIViewController {
+    
+    private let viewModel = SignUpViewModel()
+    
+    let bag = DisposeBag()
     
     private lazy var signUpLabel: UILabel = {
         let view = UILabel()
@@ -99,7 +105,7 @@ class SignUpViewController: UIViewController {
     
     private lazy var password2TextField: UITextField = {
         let view = UITextField()
-        view.placeholder = "Password"
+        view.placeholder = "Repeat password"
         view.autocorrectionType = .no
         view.autocapitalizationType = .none
         view.isSecureTextEntry = true
@@ -120,12 +126,20 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = .systemBackground
         layout()
         
     }
     
     @objc func signUpButtonClicked() {
+        guard let email = emailTextField.text, let password = passwordTextField.text, let password2 = password2TextField.text, !email.isEmpty, !password.isEmpty, password == password2 else { return }
         
+        viewModel.userDataVM.onNext((email, password))
+        
+        let alert = UIAlertController(title: "Success", message: "You've successfully signed up", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel)
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 
     private func layout() {
@@ -217,6 +231,14 @@ class SignUpViewController: UIViewController {
             make.left.equalTo(password2ImageView.snp.right).offset(15)
             make.centerY.equalToSuperview()
             make.right.equalTo(password2WhiteView.snp.right).offset(-5)
+        }
+        
+        view.addSubview(signUpButton)
+        signUpButton.snp.makeConstraints { make in
+            make.top.equalTo(password2BorderView.snp.bottom).offset(40)
+            make.centerX.equalTo(view.snp.centerX).offset(0)
+            make.height.equalTo(60)
+            make.width.equalTo(200)
         }
     }
 }
