@@ -9,5 +9,6 @@ target 'DeliveryApp' do
 	pod 'SnapKit'
 	pod 'RxSwift'
 	pod 'RxCocoa'
+	pod 'KeychainSwift'
 
 end
