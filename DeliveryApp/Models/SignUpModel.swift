@@ -22,6 +22,6 @@ class SignUpModel: NSObject {
             UserData.shared.userDefaults.set($0.0, forKey: "email")
             UserData.shared.keychain.set($0.1, forKey: "password")
         }).disposed(by: bag)
-        
+        print("hello world")
     }
 }
